@@ -6,15 +6,14 @@
   - quotes with FetchMessages() and something like collection.find(3) — depricated
   - jungle update,
   - search by role id instead of name
-  - node-fetch instead of snekfetch
 */
 
 const Discord = require("discord.js");
 const client = new Discord.Client({ autoReconnect: true });
 const config = require("./config.json");
-/*const champlist = require("./championlist.json");
+const champlist = require("./championlist.json");
 var apiai = require('apiai');
-var app = apiai(config.Dialogflow);*/
+var app = apiai(config.Dialogflow);
 
 /*
 const mastery = require("./mastery.json");
@@ -42,9 +41,9 @@ const matchupChan = '543144937537929244'
 // const sql = new SQLite('./ekkomains.sqlite');
 var GoogleSpreadsheet = require('google-spreadsheet');
  
-/* spreadsheet key is the long id in the sheets URL
+// spreadsheet key is the long id in the sheets URL
 var doc = new GoogleSpreadsheet('2PACX-1vRXtMGLgYOogM6uBhyFY3DbfRKZm4kSERd8_TnpUfjh7BQMVO4oCTYEB10DO6DtMsGL4zQDW0H-2x0O');
-var sheet;*/
+var sheet;
 
 
 
@@ -82,8 +81,8 @@ client.on("ready", () => {
     chan.send("purged the channel");
   });*/
 
-  /*const chan = client.channels.find('id', '377258752635699200');
-  chan.send("Reboot successful.");*/
+  const chan = client.channels.find('id', '377258752635699200');
+  chan.send("Reboot successful.");
 
   let streamOnline = "offline";
 
@@ -789,7 +788,7 @@ client.on("message",  message => {
   } else {
     message.channel.send('Please keep Ekkomains spam free. \nUse this command in <#336486260300447744>.')
   }
-}
+}}
 
 
 
@@ -2071,7 +2070,7 @@ client.on("message",  message => {
   client.on("error", (e) => console.error(e));
   client.on("warn", (e) => console.warn(e));
   client.on("debug", (e) => console.info(e));
-} );
+} });
 
 function remove(username, text){
   return text.replace("@" + username + " ", "");
